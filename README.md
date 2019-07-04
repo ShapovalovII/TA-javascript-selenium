@@ -17,5 +17,13 @@ npm install
 and run test:
 
 ```bash
-npm test
+node test/specs/checkByLinkTextTest.js
+node test/specs/checkByIdTest.js
+node test/specs/checkByTagNameTest.js
+node test/specs/checkByClassNameTest.js
+node test/specs/checkByNameTest.js
+node test/specs/checkByCssSelectorTest.js
+node test/specs/checkByPartialLinkTextTest.js
+node test/specs/checkByXpathTest.js
+
 ```
