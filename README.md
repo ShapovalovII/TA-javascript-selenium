@@ -25,5 +25,5 @@ node test/specs/checkByNameTest.js
 node test/specs/checkByCssSelectorTest.js
 node test/specs/checkByPartialLinkTextTest.js
 node test/specs/checkByXpathTest.js
-
+node test/specs/recordInitialLocatorsInOneRunTest.js
 ```
