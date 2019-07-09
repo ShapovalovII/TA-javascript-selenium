@@ -12,6 +12,8 @@ Install needed packages:
 
 ```bash
 npm install
+npm install assert
+
 ```
 
 and run test:

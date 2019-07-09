@@ -11,6 +11,7 @@
     "trueautomation-helper": "~0.3"
   },
   "dependencies": {
+    "assert": "^2.0.0",
     "selenium-webdriver": "~3.6.0"
   }
 }
