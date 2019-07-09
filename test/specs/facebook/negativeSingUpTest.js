@@ -1,6 +1,7 @@
 const { By, until } = require('selenium-webdriver');
 const { Builder } = require('trueautomation-selenium-webdriver');
 const { ta } = require('trueautomation-helper');
+const assert = require('assert');
 
 
 (async function negativeSignUp() {
@@ -16,7 +17,7 @@ const { ta } = require('trueautomation-helper');
         last_name.sendKeys("Shapovalov");
 
         let email_or_phone = await driver.wait(until.elementLocated(By.xpath(ta("Facebook:SingUp:email_or_phone","//input[@name='reg_email__']"))));
-        email_or_phone.sendKeys("");
+        email_or_phone.sendKeys(""); //This entry is missing for a negative test!
 
         let new_password = await driver.wait(until.elementLocated(By.xpath(ta("Facebook:SingUp:new_password","//input[@name='reg_passwd__']"))));
         new_password.sendKeys("Test1111");
@@ -37,7 +38,13 @@ const { ta } = require('trueautomation-helper');
         await driver.wait(until.elementLocated(By.xpath(ta("Facebook:SingUp:gender","//label[text()='Мужчина']")))).click();
 
         await driver.wait(until.elementLocated(By.xpath(ta("Facebook:SingUp:singup","(//button[text()='Регистрация'])[1]")))).click();
-        
+
+        let actualError = await driver.wait(until.elementLocated(By.xpath(ta("Facebook:SingUp:email_error","//div[text()='Они потребуются вам для входа и сброса пароля.']")))).getText();
+        let expectedError = "Они потребуются вам для входа и сброса пароля.";
+        assert(actualError,expectedError);
+
+        console.log("Test completed successfully. Email not true");
+
     } finally {
         await driver.quit();
     }
