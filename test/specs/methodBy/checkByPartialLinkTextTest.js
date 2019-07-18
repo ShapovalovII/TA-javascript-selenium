@@ -1,6 +1,6 @@
-const { By, until } = require('selenium-webdriver');
-const { Builder } = require('trueautomation-selenium-webdriver');
-const { ta } = require('trueautomation-helper');
+const {until} = require('selenium-webdriver');
+const {Builder, By} = require('trueautomation-selenium-webdriver');
+const {ta} = require('trueautomation-helper');
 
 (async function checkByPartialLinkTextTest() {
     const driver = new Builder().forBrowser('chrome').build();

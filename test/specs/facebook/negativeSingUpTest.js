@@ -41,7 +41,7 @@ const assert = require('assert');
 
         let actualError = await driver.wait(until.elementLocated(By.xpath(ta("Facebook:SingUp:email_error","//div[text()='Они потребуются вам для входа и сброса пароля.']")))).getText();
         let expectedError = "Они потребуются вам для входа и сброса пароля.";
-        assert.equal(actualError,expectedError);
+        assert.strictEqual(actualError,expectedError);
 
         console.log("Test completed successfully. Email not true");
 
